@@ -67,9 +67,7 @@ app.post("/login/", async (request, response) => {
         username: username,
       };
       const jwtToken = jwt.sign(payload, "MY_SECRET_TOKEN");
-      response.send(`{
-  "jwtToken":"${jwtToken}"
-}`);
+      response.send({ jwtToken }`);
     } else {
       response.status(400);
       response.send("Invalid password");
